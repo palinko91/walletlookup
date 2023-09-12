@@ -1,7 +1,13 @@
 ## Simple CLI tool to search for exact Pi Wallet Address
+
+
 In order to use this tool you have to put the `walletlookup` exacutable in the same file with `accounts.csv`.
+
 Since the `accounts.csv` file dynamically expanding and it's huge already not provided to the repo.
+
 You can get it here: [download accounts.csv](https://drive.google.com/file/d/17Acqgf9sPx9x8vmaSyExNphNr2P9LC0Y/view?usp=sharing)
+
+
 Example of the content of `accounts.csv`:
  
  
