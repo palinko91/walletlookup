@@ -1,15 +1,16 @@
-## Simple CLI tool to search for exact Pi Wallet Address
+## Simple CLI tool to search for exact Pi Wallet Address or transaction hash
 
 
-In order to use this tool you have to put the `walletlookup` exacutable in the same file with `accounts.csv`.
+In order to use this tool you have to put the `walletlookup` exacutable in the same file with `accounts.csv` and `hashlist.txt`.
 
 Since the `accounts.csv` file dynamically expanding and it's huge already not provided to the repo.
 
 You can get it here: [download accounts.csv](https://drive.google.com/file/d/17Acqgf9sPx9x8vmaSyExNphNr2P9LC0Y/view?usp=sharing)
 
+To get the hashlist: [download hashlist.txt](https://drive.google.com/file/d/12JVO8SHQDFrouQBsIn8NqUW3PtT5xQuQ/view?usp=sharing)
+
 
 Example of the content of `accounts.csv`:
- 
  
 
     Block number,Amounts of wallet total,Wallet address,Timestamp
@@ -33,9 +34,29 @@ Example of the content of `accounts.csv`:
 	148,18,GAFDT4TODEHRQOBETF4KRZY3R4OTMXIKFV4ZMMZBO2KTVEOWEU4NI5VG,2020-12-31T22:59:41Z
 	148,19,GB6DOWJJZ4QJNBD3EPU4SDJILE6FOYRRLV6UJDSN2YYNNQSRADVRQ7UD,2020-12-31T22:59:41Z
 
+Example of the content of `hashlist.txt`:
+
+
+    e66675e60b946a135b9c30655339e567656e921a4dfd7303191034a702f9d6da
+    3efc4a97fb3b7a82fc053cb173cf81bf62658a00d59f0e06fad6efc38225cf53
+    c7b82013b804da897be1341ef6930ae4269bf01cadcdc62b7db9a5a3e8dd737f
+    912c9def4cec3e204f387912ed00e98a39accbd35aeace73920678f216bd7262
+    c2e1cae712b456773a178b73619b54654de70ba9a38854e5c9f52e8b771a3a51
+    5a1b9d03a17cc195c71759be7f0cdb95cff275d8dd2faf3fe4959820f662477f
+    314b80e908862df91ff31a9ad4e7c5d55f5f73c970ac9fc3bd00821e69a5cef9
+    f0533818f449960759a359c6e2e8725efd5b42f24b0f36e89f4bc32f7583901a
+    ca99f3c8890802d6743ea3e48e216fe941a16396b3d96f5d746a1e0f11efef7c
+    8ea99e3949436b02b570ca3995a9de26e15ef838309e9635c7661b29d40ab21b
+    3204114bf95742daf9983e519f44a9b7a138ff834b23904af9565c0e9d2ac750
+    884cd6e2d188e9cb3a60b1273573ea7936230582bded26a988ade7e8a9d4ce22
+    884a66d2ffe0dc096508312971aa93cbba5d64167074c088eeb3d24b3299d0d9
+    6b412324f9706f73207968278e99cfded38808ff77119708ea7aae5e089dbb96
+    6a8ffbe944c1a72d9cdaa96766695d43287e34b55922b96dab1b5fbfb388c7ee
+    348f8c1c5d07d48d5e7f0da5fdef1921e0375ebae522344bf6c341e68ed4f741
+
 ## Usage
 On windows:
-Put the `walletlookup.exe` and `accounts.csv` in the same folder and navigate there with PowerShell.
+Put the `walletlookup.exe`, `accounts.csv` and `hashlist.txt` in the same folder and navigate there with PowerShell. You can use the program without one of the file but you will getting a reminder always.
 
     .\walletlookup.exe -b gcj5l -e swj4
 
@@ -48,17 +69,27 @@ The output will be:
 	----------------------------------------------------------------------------
 
 Ofcourse later more wallet can have match to this criteria.
-Important to note you can give the data in lower and upper case also
+Important to note you can give the data in lower and upper case also.
+If you are not setting a mode argument the default the program will looking for wallet.
+
+|argument| result |
+|--|--|
+| nothing | Looking for wallet |
+| -m wallet | Looking for wallet |
+| -m account | Looking for wallet |
+| -m hash | Looking for transaction hash |
+| -m txhash | Looking for transaction hash |
 
 ## Functions
 
-    Useful tool to search for Pi wallet address based on partial data
+    Useful tool to search for Pi wallet address or transaction hash based on partial data
 
-	Usage: walletlookup.exe [OPTIONS]
+    Usage: walletlookup.exe [OPTIONS]
 
-	Options:
-	  -b, --begins <BEGINS>      The exact characters beginning of the wallet, starting with G, please use no more than 28!
-	  -e, --ends <ENDS>          The exact characters ending of the wallet of the wallet please use no more than 28!
-	  -c, --contains <CONTAINS>  Characters in the exact order which are in the wallet! Highly optional.
-	  -h, --help                 Print help
-	  -V, --version              Print version
+    Options:
+    -m, --mode <MODE>          Depends you are looking for wallet then give wallet or account, if you looking for transaction hash give hash or txhash value [default: wallet]
+    -b, --begins <BEGINS>      The exact characters beginning of the wallet, starting with G, please use no more than 28!
+    -e, --ends <ENDS>          The exact characters ending of the wallet of the wallet please use no more than 28!
+    -c, --contains <CONTAINS>  Characters in the exact order which are in the wallet! Highly optional.
+    -h, --help                 Print help
+    -V, --version              Print version
