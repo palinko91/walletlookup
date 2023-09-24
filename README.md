@@ -3,11 +3,15 @@
 
 In order to use this tool you have to put the `walletlookup` exacutable in the same file with `accounts.csv` and `hashlist.txt`.
 
-Since the `accounts.csv` file dynamically expanding and it's huge already not provided to the repo.
+Since the `accounts.csv` and `hashlist.txt` files dynamically expanding and it's huge already not provided to the repo.
 
-You can get it here: [download accounts.csv](https://drive.google.com/file/d/17Acqgf9sPx9x8vmaSyExNphNr2P9LC0Y/view?usp=sharing)
+Last processed block: 10861726
 
-To get the hashlist: [download hashlist.txt](https://drive.google.com/file/d/12JVO8SHQDFrouQBsIn8NqUW3PtT5xQuQ/view?usp=sharing)
+Anything happened happened after the last processed block not going to be represented in the files.
+
+You can get it here: [download accounts.csv](https://drive.google.com/file/d/1AlUVAI0lie6n7VAkpMK3Dhro_aWpUvEK/view?usp=drive_link)
+
+To get the hashlist: [download hashlist.txt](https://drive.google.com/file/d/1QRd9Hf6V1mf1tigDcQpj93ShQNl4kk0W/view?usp=drive_link)
 
 
 Example of the content of `accounts.csv`:
